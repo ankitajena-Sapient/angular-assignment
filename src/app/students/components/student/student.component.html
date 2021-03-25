@@ -1,0 +1,20 @@
+<div class="container">
+    <h3>Student List</h3>
+<table>
+    <tbody>
+        <tr>
+            <td class="pointer" (click) = "sort(i)" *ngFor = "let heading of headings; index as i ">
+                {{heading}}
+            </td>
+        </tr>
+        <tr *ngFor = "let student of students">
+            <td>{{student.Name}}</td>
+            <td>{{student.Class}}</td>
+            <td>{{student.Section}}</td>
+            <td>{{student.Sub1}}</td>
+            <td>{{student.Sub2}}</td>
+            <td>{{student.Sub3}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>

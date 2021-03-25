@@ -1,0 +1,14 @@
+<div class="container">
+    <h3>Timer with Input/Output</h3>
+<div class="flex-class">
+<app-timer-display [timeLeft] = 'timeLeft'></app-timer-display>
+<app-timer-option (timeLeftOutput)="updateTimer($event)"
+(startCount)="startCount($event)"
+(pauseCount)="pauseCount($event)"
+(resetCount) = "resetCount($event)"></app-timer-option>
+</div>
+<div class="flex-class">
+<app-timer-details [eventArray] = "eventArray" ></app-timer-details>
+<app-timer-counter [startCounter] = 'startClicked' [pauseCounter] = 'pauseClicked'></app-timer-counter>
+</div>
+</div>
