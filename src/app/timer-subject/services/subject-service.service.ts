@@ -13,6 +13,5 @@ export class SubjectService {
 
   public resetCount = new Subject<Array<string>>();
 
-  public excludeSelectedZone = new Subject<any>();
   constructor() { }
 }

@@ -15,7 +15,7 @@ export class DynamicLoadingComponent implements OnInit {
     }
   }
 
-  onContainerScroll(event: any): void{
+  onContainerScroll(): void{
       this.buttonArray.push(this.buttonArray.length + 1);
   }
   setAlert(index: number): void{

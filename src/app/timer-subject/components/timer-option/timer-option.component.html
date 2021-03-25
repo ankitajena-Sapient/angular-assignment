@@ -1,6 +1,6 @@
 <div class="container">
-<input [disabled] = 'disableInput' type = 'number' [(ngModel)] = 'initialTimer' #timer (input) = 'emitTimer(timer.value)'>
-<button [disabled] = 'isStart' (click) ="startTimer()">Start</button>
-<button (click) ="pauseTimer()">Pause</button>
-<button (click) = "resetClicked()">Reset</button>
+    <input [disabled]='disableInput' type='number' [(ngModel)]='initialTimer' #timer (input)='emitTimer(timer.value)'>
+    <button [disabled]='isStart' (click)="startTimer()">Start</button>
+    <button (click)="pauseTimer()">Pause</button>
+    <button (click)="resetClicked()">Reset</button>
 </div>

@@ -6,15 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  products : Array<number> = [];
-  gridView: boolean = false;
+  products: Array<number> = [];
+  gridView = false;
   constructor() { }
 
   ngOnInit(): void {
     this.products = Array(40).fill('').map((x, i) => i);
   }
 
-  sort(){
+  sort(): void{
     this.products.reverse();
   }
 

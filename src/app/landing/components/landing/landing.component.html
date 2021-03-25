@@ -1,11 +1,14 @@
 <h3>Banner with Rotating Text</h3>
-<div class="container">
-<div *ngFor = "let div of divsArray; index as i;">
-    <div class="border" [style.width.%]="((i+10) *4)" [style.height.%]="((i+6) * 6)"
-    [style.margin-top.%]  = "divsArray.length - (i *2)"
-     [style.margin-left.%]  = "divsArray.length - (i *2)"
-     [style.padding-bottom.%]  = "i">
-        <div *ngIf = "i === 0" class="rotation">Rotataing</div>
+<div class="floating">
+    <div class="container">
+        <div *ngFor="let div of divsArray; index as i;">
+            <div class="border" [style.width.%]="((i+10) *4)" [style.height.%]="((i+6) * 6)"
+                [style.margin-top.%]="divsArray.length - (i *2)" [style.margin-left.%]="divsArray.length - (i *2)"
+                [style.padding-bottom.%]="i">
+                <div *ngIf="i === 0" class="rotation">
+                    <h4>Rotating</h4>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 </div>

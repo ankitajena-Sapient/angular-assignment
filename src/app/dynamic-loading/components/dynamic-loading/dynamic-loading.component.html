@@ -1,6 +1,6 @@
 <h3>Dynamic Loading</h3>
 <div infinite-scroll class="scroll-container"
- (scrolled)="onContainerScroll($event)"  style="width: 100%;">
+ (scrolled)="onContainerScroll()"  style="width: 100%;">
     <div *ngFor = "let button of buttonArray; index as i" class="height-width">
         <button class="button" (click) = "setAlert(i+1)">
             Click {{i+1}}th Button
