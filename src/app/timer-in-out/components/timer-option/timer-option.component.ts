@@ -1,11 +1,11 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-timer-option',
   templateUrl: './timer-option.component.html',
   styleUrls: ['./timer-option.component.scss']
 })
-export class TimerOptionComponent implements OnInit {
+export class TimerOptionComponent implements OnInit , OnDestroy{
 
   constructor() { }
   timeLeft: number;
@@ -60,5 +60,9 @@ export class TimerOptionComponent implements OnInit {
   emitTimer(timer: number): void{
     this.timeLeft = timer;
     this.timeLeftOutput.emit(timer);
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.interval);
   }
 }

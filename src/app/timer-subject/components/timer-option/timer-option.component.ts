@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SubjectService } from '../../services/subject-service.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { SubjectService } from '../../services/subject-service.service';
   templateUrl: './timer-option.component.html',
   styleUrls: ['./timer-option.component.scss']
 })
-export class TimerOptionComponent implements OnInit {
+export class TimerOptionComponent implements OnInit , OnDestroy{
 
   constructor(private subjectService: SubjectService) { }
   timeLeft: number;
@@ -83,5 +83,9 @@ export class TimerOptionComponent implements OnInit {
     + (currentdate.getMonth() + 1)  + '-'
     + currentdate.getFullYear() + ' ' + hours + ':' + minutes + ' ' + ampm;
     return dateTime;
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.interval);
   }
 }
